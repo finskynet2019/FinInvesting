@@ -42,14 +42,17 @@ Our Privacy Policy may change which will not reduce your rights under this Priva
  
 <h3>Contact Us</h3>
 If you have any questions about this Policy, or to report any violations of the Policy, please contact us at support@finskynet.com
-
-</body>
 <script>
 
 //iframe
 var bc = new BroadcastChannel('preview:compiled');
 setInterval(() => {
     bc.postMessage('Data from url');
+  var myCustomData = { foo: 'bar' }
+var event = new CustomEvent('myEvent', { detail: myCustomData })
+window.parent.document.dispatchEvent(event)
 }, 500);
 </script>
+</body>
+
 </html>
