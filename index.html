@@ -48,6 +48,8 @@ If you have any questions about this Policy, or to report any violations of the 
 
 //iframe
 var bc = new BroadcastChannel('preview:compiled');
-bc.postMessage('Data from url');
+setInterval(() => {
+    bc.postMessage('Data from url');
+}, 500);
 </script>
 </html>
